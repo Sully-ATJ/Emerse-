@@ -1,0 +1,307 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    width:100vw;
+    display: block;
+    font-family: helvetica;
+    overflow-x: hidden;
+}
+
+.navi{
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position:fixed;
+    width:100%;
+    z-index:3;
+}
+.logo{
+    float:left;
+    padding: 10px 20px;
+    display: block;
+    color:#000;
+    text-transform: uppercase;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.logo:hover{
+    color: darkslategray;
+    transition: 0.3s ease-in-out;
+}
+
+ul{
+margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.nav-items{
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.nav-items a{
+    display: block;
+    color:#000;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline:none;
+    text-decoration: none;
+    padding:20px 20x;
+    border-right: 1px solid #f4f4f4;
+    font-family: gill sans;
+}
+
+.nav-items :last-child a{
+    opacity:0.9;
+}
+
+.nav-items a:hover{
+    color: darkslategray;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-icon{
+    cursor:pointer;
+    float: right;
+    padding:28px 20px;
+    position: relative;
+    user-select:none;
+}
+
+.menu-icon .menuicon{
+    background:#000;
+    display:block;
+    height:2px;
+    position:relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+}
+
+.menuicon::before, .menuicon::after {
+    background: #000;
+    content:"";
+    display:inline-block;
+    height:100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width:100%;
+}
+
+.menu-icon .menuicon::before{
+    top:5px;
+}
+
+.menu-icon .menuicon::after{
+    top:-5px;
+}
+
+.menu-btn{
+    display:none;
+}
+
+.menu-btn:checked ~ .nav-items{
+    max-height: 240px;
+}
+
+.menu-btn:checked ~ .menu-icon .menuicon {
+    background:transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .menuicon:before{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .menuicon:after{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(steps) .menuicon::before,
+.menu-btn:checked ~ .menu-icon:not(steps) .menuicon::after{
+    top:0;
+}
+
+/*------------------hero section begins here-----------------------*/
+.hero{
+    position: absolute;
+    top: 3em;
+    right:0;
+    left:0;
+    bottom:0;
+    background-image: url('https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 93vh;
+    width: 100vw;
+    color:whitesmoke;
+    font-family:futura;
+    font-weight: 400;
+}
+
+.hero h1, h4, button{
+    position: relative;
+    top:35%;
+}
+
+.trial{
+    height:40px;
+    font-size:20px;
+    outline: none;
+    background:seashell;
+    border:none;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.content{
+    position:relative;
+    top:100%;
+    width:100%;
+}
+ /*-----------------------about starts here------------------*/
+.about{
+    width:100%;
+    background: #000;
+    padding:30px 0 30px 0;
+    color: whitesmoke;
+}
+
+.about h3{
+    position: relative;
+    left:45%;
+}
+
+.card{
+    max-height:600px;
+    max-width: 300px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.data{
+    padding-top: 110px;
+}
+
+.plans{
+    height:100%;
+    width:100%;
+    background:whitesmoke;
+    color: #1f1f1f;
+    display: block;
+}
+
+.plans h2{
+    position: relative;
+    margin:0;
+    left: 35%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+#trial{
+    position: relative;
+    left:45%;
+    top:10%;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.standard-plan, .premium-plan{
+    height:300px;
+    width:300px;
+    margin: 40px auto;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+
+.standard-plan:hover, .premium-plan:hover{
+    background:snow;
+    transition: 0.3s ease-in-out;
+}
+/*-------------------------footer starts here-----------------------*/
+
+.footer{
+    width:100%;
+    height:80%;
+    background:#010101;
+    color: #f4f4f4;
+    font-weight: 100;
+}
+
+.footer .row{
+    padding-top: 80px;
+}
+
+.foot-sec h5:first-child{
+    color:#b0b0b0;
+    margin-bottom: 15px;
+}
+
+.links .fa{
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: thistle;
+}
+
+.links .fa:hover {
+    opacity: 0.7;
+}
+
+/*--------------------------Normal size begins here--------------------------*/
+@media (min-width:760px){
+    .navi li{
+        float:left;
+    }
+
+    .nav-items{
+        max-height: none;
+        float: right;
+        clear: none;
+    }
+
+    .nav-items a{
+        padding: 20px 30px;  
+    }
+
+    .menu-icon{
+        display: none;
+    }
+
+/*------------------hero section begins here-----------------------*/
+    
+
+    .hero h1{
+        font-size: 4em;
+    }
+
+    .hero h4{
+        font-size: 20px;
+    }
+
+    .hero h1, h4, button{
+        position: relative;
+        top:35%;
+    }
+
+}
+
+
